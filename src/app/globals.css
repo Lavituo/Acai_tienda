@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-brand-primary: #4E1454;
+  --color-brand-secondary: #7A2280;
+  --color-brand-accent: #6BB71A;
+  --color-brand-bg: #FAFAF5;
+  --color-brand-text: #2B2B2B;
+
+  --color-background: var(--color-brand-bg);
+  --color-foreground: var(--color-brand-text);
+
+  --color-card: #ffffff;
+  --color-card-foreground: var(--color-brand-text);
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: var(--color-brand-text);
+
+  --color-primary: var(--color-brand-primary);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: var(--color-brand-secondary);
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+
+  --color-accent: var(--color-brand-accent);
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: var(--color-brand-primary);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+  }
+}
