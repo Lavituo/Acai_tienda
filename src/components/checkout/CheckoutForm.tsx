@@ -73,19 +73,27 @@ ${deliveryType === "delivery" ? `📍 Dirección: ${address}` : ""}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             <div>
-              <RadioGroupItem value="delivery" id="delivery" className="peer sr-only" />
+              <RadioGroupItem value="delivery" id="delivery" className="sr-only" />
               <Label
                 htmlFor="delivery"
-                className="flex flex-col items-center justify-between rounded-xl border-2 border-muted bg-transparent p-4 hover:bg-muted hover:text-accent-foreground peer-data-[state=checked]:border-brand-primary [&:has([data-state=checked])]:border-brand-primary cursor-pointer transition-all"
+                className={`flex flex-col items-center justify-between rounded-xl border-2 p-4 cursor-pointer transition-all ${
+                  deliveryType === "delivery"
+                    ? "border-brand-primary bg-brand-primary/5 text-brand-primary"
+                    : "border-muted bg-transparent hover:bg-muted hover:text-accent-foreground"
+                }`}
               >
                 Delivery
               </Label>
             </div>
             <div>
-              <RadioGroupItem value="pickup" id="pickup" className="peer sr-only" />
+              <RadioGroupItem value="pickup" id="pickup" className="sr-only" />
               <Label
                 htmlFor="pickup"
-                className="flex flex-col items-center justify-between rounded-xl border-2 border-muted bg-transparent p-4 hover:bg-muted hover:text-accent-foreground peer-data-[state=checked]:border-brand-primary [&:has([data-state=checked])]:border-brand-primary cursor-pointer transition-all"
+                className={`flex flex-col items-center justify-between rounded-xl border-2 p-4 cursor-pointer transition-all ${
+                  deliveryType === "pickup"
+                    ? "border-brand-primary bg-brand-primary/5 text-brand-primary"
+                    : "border-muted bg-transparent hover:bg-muted hover:text-accent-foreground"
+                }`}
               >
                 Retiro
               </Label>
