@@ -36,7 +36,7 @@ export const products: Product[] = [
     description: "Auténtico açaí brasileño, textura perfecta y sabor intenso.",
     price: 12000,
     category: "Açaí",
-    image: "https://images.unsplash.com/photo-1590159763121-0a14daeb77dc?q=80&w=600&auto=format&fit=crop",
+    image: "/images/products/pote_acai_uncuarto.png",
     size: "1/4 kg",
   },
   {
@@ -45,7 +45,7 @@ export const products: Product[] = [
     description: "Auténtico açaí brasileño para compartir.",
     price: 22000,
     category: "Açaí",
-    image: "https://images.unsplash.com/photo-1590159763121-0a14daeb77dc?q=80&w=600&auto=format&fit=crop",
+    image: "/images/products/pote_acai_mediokg.jpeg",
     size: "1/2 kg",
   },
   {
@@ -54,7 +54,7 @@ export const products: Product[] = [
     description: "El formato más grande para los verdaderos fans del açaí.",
     price: 32000,
     category: "Açaí",
-    image: "https://images.unsplash.com/photo-1590159763121-0a14daeb77dc?q=80&w=600&auto=format&fit=crop",
+    image: "/images/products/pote_acai_unkg.jpeg",
     size: "1 kg",
   },
   {

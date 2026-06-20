@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Check } from "lucide-react";
 
 export function CheckoutForm() {
   const { items, getTotal, clearCart } = useCartStore();
@@ -76,26 +76,36 @@ ${deliveryType === "delivery" ? `📍 Dirección: ${address}` : ""}
               <RadioGroupItem value="delivery" id="delivery" className="sr-only" />
               <Label
                 htmlFor="delivery"
-                className={`flex flex-col items-center justify-between rounded-xl border-2 p-4 cursor-pointer transition-all ${
+                className={`relative flex flex-col items-center justify-center rounded-xl border-2 p-4 cursor-pointer transition-all h-full ${
                   deliveryType === "delivery"
                     ? "border-brand-primary bg-brand-primary/5 text-brand-primary"
-                    : "border-muted bg-transparent hover:bg-muted hover:text-accent-foreground"
+                    : "border-border bg-transparent hover:border-brand-primary/30 text-foreground"
                 }`}
               >
-                Delivery
+                {deliveryType === "delivery" && (
+                  <div className="absolute top-2 right-2 text-brand-primary">
+                    <Check size={16} />
+                  </div>
+                )}
+                <span className="font-bold">Delivery</span>
               </Label>
             </div>
             <div>
               <RadioGroupItem value="pickup" id="pickup" className="sr-only" />
               <Label
                 htmlFor="pickup"
-                className={`flex flex-col items-center justify-between rounded-xl border-2 p-4 cursor-pointer transition-all ${
+                className={`relative flex flex-col items-center justify-center rounded-xl border-2 p-4 cursor-pointer transition-all h-full ${
                   deliveryType === "pickup"
                     ? "border-brand-primary bg-brand-primary/5 text-brand-primary"
-                    : "border-muted bg-transparent hover:bg-muted hover:text-accent-foreground"
+                    : "border-border bg-transparent hover:border-brand-primary/30 text-foreground"
                 }`}
               >
-                Retiro
+                {deliveryType === "pickup" && (
+                  <div className="absolute top-2 right-2 text-brand-primary">
+                    <Check size={16} />
+                  </div>
+                )}
+                <span className="font-bold">Retiro</span>
               </Label>
             </div>
           </RadioGroup>
